@@ -1,24 +1,23 @@
- import express, { Application } from "express";
-// import express, { Request, Response } from "express";
+import express, { Application } from "express"
+import { getRoles } from "./controllers/roleController"
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv"
 
 dotenv.config()
 
-const app: Application = express();
+const app: Application = express()
 
 const PORT = process.env.PORT || 4000
 
-app.get('/healthy',(req,res)=>{
-res.status(200).json({
+app.get("/healthy", (req, res) => {
+  res.status(200).json({
     success: true,
-    message: "it's alive"
+    message: "Server is healthy",
+  })
 })
+// creo el endpoint roles.
+app.get("/roles",getRoles)
+
+app.listen(PORT, () => {
+  console.log(`Server is running at PORT: ${PORT}`)
 })
-
-app.listen(PORT,()=>{
-    console.log(`Server is running at PORT: ${PORT}`);
-})
-
-
-
