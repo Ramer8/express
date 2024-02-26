@@ -1,5 +1,5 @@
-import express, { Application } from "express"
 import 'dotenv/config'
+import express, { Application } from "express"
 import { createdRoles, deletedRoles, getRoles, updatedRoles } from "./controllers/roleController"
 
 
