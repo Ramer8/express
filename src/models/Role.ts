@@ -1,6 +1,7 @@
 import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { User } from "./User"
 
+
 @Entity("roles") //arroba nos da mas propiedades al role
 export class Role extends BaseEntity { //extends hace que herede propiedades del padre,
     //baseEntity 

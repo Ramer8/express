@@ -15,10 +15,8 @@ app.get("/healthy", (req, res) => {
   })
 })
 // creo el endpoint roles.
+
 app.get("/roles",getRoles)
-
 app.post("/roles",createdRoles)
-
 app.put("/roles/:id",updatedRoles)
-
 app.delete("/roles/:id",deletedRoles)
