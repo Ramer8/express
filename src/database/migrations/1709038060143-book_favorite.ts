@@ -49,6 +49,7 @@ export class BookFavorite1709038060143 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+         await queryRunner.dropTable("book_favorite");
     }
 
 }

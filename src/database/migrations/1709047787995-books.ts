@@ -45,6 +45,7 @@ export class Books1709047787995 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+         await queryRunner.dropTable("books");
     }
 
 }
