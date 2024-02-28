@@ -7,10 +7,12 @@ const PORT = process.env.PORT || 4000
 
 const startServer= () =>{
 
+    //conexión a base de datos
     AppDataSource.initialize()
 .then(() => {
     console.log('Database connected');
 
+    //Una vez conectada conecto al servidor!
      app.listen(PORT, () => {
       console.log(`Server is running at PORT: ${PORT}`)
     })

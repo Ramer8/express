@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import express, { Application } from "express"
 import { createdRoles, deletedRoles, getRoles, updatedRoles } from "./controllers/roleController"
+ import { LoginUser, RegisterUser } from './controllers/authController'
+import { getUser } from './controllers/useControllers'
 
 
 export const app: Application = express()
@@ -15,6 +17,15 @@ app.get("/healthy", (req, res) => {
   })
 })
 // creo el endpoint roles.
+
+
+// register 
+app.post('/auth/register', RegisterUser);
+app.post('/auth/login', LoginUser);
+
+app.get('/api/users', getUser)
+
+// 
 
 app.get("/roles",getRoles)
 app.post("/roles",createdRoles)

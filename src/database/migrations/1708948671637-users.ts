@@ -14,12 +14,17 @@ export class Users1708948671637 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "name",
+            name: "first_name",
             type: "varchar",
             length: "50",
           },
           {
-            name: "password",
+            name: "last_name",
+            type: "varchar",
+            length: "50",
+          },
+          {
+            name: "password_hash",
             type: "varchar",
             length: "255",
             isNullable: false,
@@ -38,6 +43,12 @@ export class Users1708948671637 implements MigrationInterface {
             onUpdate: "now()",
           },
           {
+            name: "updated_at",
+            type: "timestamp",
+            default: "now()",
+            onUpdate: "now()",
+          },
+          {
             name: "role_id",
             type: "int",
             isNullable:true
@@ -51,6 +62,7 @@ export class Users1708948671637 implements MigrationInterface {
             onDelete: "CASCADE",
           },
         ],
+        
       })
     )
   }
