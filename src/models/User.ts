@@ -22,7 +22,6 @@ export class User extends BaseEntity {
 
   @Column({ name: "created_at" })
   updatedAt!: Date
-//   isActive!: boolean
 
   @ManyToOne(()=> Role, (role)=> role.user)
   @JoinColumn({name:"role_id"}) //campo personalizado a la bd
