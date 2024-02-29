@@ -18,7 +18,7 @@ try {
   if (name.length > 50) {
     return res.status(400).json({
       success: false,
-      message: "Role name is too long",
+      message: "Role name must be under 50 characters",
     })
   }
   const newRole = await Role.create({

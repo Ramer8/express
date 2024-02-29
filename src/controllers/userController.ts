@@ -3,7 +3,13 @@ import { User } from "../models/User"
 
 export const getUser = async (req: Request, res: Response) => {
   try {
-    const users = await User.find()
+    const users = await User.find(
+      {
+        order :{
+            last_name: "ASC",
+        }
+     }
+    )
 
     res.status(200).json({
       success: true,
